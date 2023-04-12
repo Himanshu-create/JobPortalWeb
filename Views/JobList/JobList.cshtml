@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>List of All Jobs</h1>
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Job ID</th>
+            <th>Job Name</th>
+            <th>Domain</th>
+            <th>late Date for Registration</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (var j in ViewBag.allJobList)
+            {
+                <tr>
+                    <td>@j.Id</td>
+                    <td>@j.Name</td>
+                    <td>@j.Domain</td>
+                    <td>@j.DateOfReg</td>
+                    <td>
+                        <a class="btn-primary" href="/JobList/JobApply?id=@j.Id"> Apply</a>
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
