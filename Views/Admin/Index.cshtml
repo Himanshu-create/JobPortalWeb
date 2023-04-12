@@ -4,4 +4,36 @@
 @{
 }
 
-<p>Admin Panel</p>
+
+<h6>List of All Jobs Admin Controller</h6>
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Job ID</th>
+            <th>Job Name</th>
+            <th>Domain</th>
+            <th>late Date for Registration</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (var j in ViewBag.allJobList)
+            {
+                <tr>
+                    <td>@j.Id</td>
+                    <td>@j.Name</td>
+                    <td>@j.Domain</td>
+                    <td>@j.DateOfReg</td>
+                    <td>
+                        <a class="btn-primary" href="Admin/ViewAllApplicant?id=@j.Id"> View Applicant</a>
+                    </td>
+                    <td>
+                        <a class="btn-primary" href="/JobList/JobApply?id=@j.Id"> Edit Job</a>
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h6>All Applicants</h6>
+<p1>Job ID : @ViewBag.JobID</p1>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Applicant ID</th>
+            <th> Name</th>
+            <th>College Name</th>
+            <th>Phone Np</th>
+            <th>Email ID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (var j in ViewBag.allApplicants)
+            {
+                <tr>
+                    <td>@j.Id</td>
+                    <td>@j.Name</td>
+                    <td>@j.CollegeName</td>
+                    <td>@j.PhoneNo</td>
+                    <td>@j.email</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
